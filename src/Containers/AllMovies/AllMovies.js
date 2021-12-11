@@ -1,12 +1,9 @@
 import React from 'react';
 import CardsMovies from '../../Components/CardsMovies/CardsMovies';
-// import {
-//     H2,
-//     BodyMovies
-// } from './StyledMovies';
 import {apiKey, getAllMovies} from '../../helpers/urls'
+import {BodyMovies} from './StyledAllMovies'
 
-const Movies = () => {
+const AllMovies = () => {
     const [movies, setMovies] = React.useState([]) 
     React.useEffect(() => {
         fetch(getAllMovies(apiKey))
@@ -15,12 +12,10 @@ const Movies = () => {
     }, [])
     
     return (
-        <div>
-            <CardsMovies
-            movies={movies}
-            />
-        </div>
+        <BodyMovies>
+            <CardsMovies movies={movies} />  
+        </BodyMovies>
     );
 };
 
-export default Movies;
+export default AllMovies;

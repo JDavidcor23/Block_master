@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const ContainerMovies = styled.div`
 width: 90%;
 flex-wrap: wrap;
@@ -10,7 +9,9 @@ margin: 0 auto;
 position:relative;
 `
 export const CardsPeliculas = styled.div`
-margin-bottom: 10px;
+margin: 0 auto;
+cursor: pointer;
+margin-bottom: 20px;
 `
 
 export const Poster = styled.img`
@@ -20,23 +21,27 @@ width: 200px;
 export const DivCalificacion= styled.div`
 position: absolute;
 display: flex;
-
+width: 100px;
+height: 50px;
 `
 export const CalificationContainer = styled.img`
-width: 100px;
-position:relative;
+width: 100%;
+position:;
 display: flex;
+
 `
 export const Estrella = styled.img`
-position: absolute;
-top:20%;
+position: absolute; 
 width: 30px;
+top:20%;
 z-index:1;
 `
 export const Calificacion = styled.p`
 position: absolute;
-    font-size: 1.2rem;
-    color: white;
-    top: 35%;
-    left: 50%;
+font-size: 1.2rem;
+top: 20%;
+color: white;
+left: 40%;
+font-family: 'Montserrat', sans-serif;
+font-Weight: 400;
 `

@@ -2,6 +2,7 @@ import React from 'react';
 import {searcUrl, apiKey} from '../../helpers/urls'
 import { useParams } from 'react-router-dom';
 import CardsMovies from '../../Components/CardsMovies/CardsMovies';
+import {BodyMovies} from './styledSearchedMovies'
 
 const SearchedMovies = () => {
 
@@ -13,12 +14,12 @@ const SearchedMovies = () => {
          fetch(searcUrl(apiKey, movie))
          .then(resp => resp.json())
          .then(data => setMovies(data.results))
-         console.log(movies)
     }, [movie])
     return (
-        <div>
-              <CardsMovies movies={movies} /> 
-        </div>
+        <BodyMovies>
+            <CardsMovies movies={movies} /> 
+ 
+        </BodyMovies>
     );
 };
 

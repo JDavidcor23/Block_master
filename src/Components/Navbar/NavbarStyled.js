@@ -34,3 +34,31 @@ export const LinkBuscar = styled(Link)`
 width: 100px;
 background: red;
 `
+export const From = styled.form`
+width: 40%;
+display: flex;
+position: relative;
+`
+export const InputSearch = styled.input`
+    width: 80%;
+    outline: none;
+    height: 32px;
+    border-radius: 10px;
+    padding: 0 0 0 10px;
+`
+export const ButtonSearch = styled.button`
+    width: 20%;
+    position: absolute;
+    background: rgba(254, 217, 65, 1);
+    height: 30px;
+    top: 1px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    right: 10px;
+
+`
+export const ImgSearch = styled.img`
+    height: 90%;
+    margin: 2px 0 0 0;
+`

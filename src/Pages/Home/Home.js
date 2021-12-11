@@ -1,9 +1,9 @@
 import React from 'react';
-import Movies from '../../Containers/Movies/Movies';
+import AllMovies from '../../Containers/AllMovies/AllMovies';
 const Home = () => {
     return (
         <div>
-            <Movies/>
+            <AllMovies/>
         </div>
     );
 };
