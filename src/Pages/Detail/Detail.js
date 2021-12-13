@@ -1,11 +1,12 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 // import {DetailContainer} from './StyledDetail'
 import './prueba.css'
-import { pathImg, apiKey, getVideo } from '../../helpers/urls'
-import { urlFavorites } from '../../helpers/endponit'
+import { pathImg } from '../../helpers/urls'
+// import { pathImg, apiKey, getVideo } from '../../helpers/urls'
+// import { urlFavorites } from '../../helpers/endponit'
 const Detail = () => {
-     const [keyVideo, setKeyVideo] = React.useState('')
+    //  const [keyVideo, setKeyVideo] = React.useState('')
     // const [moviesAdd, setMoviesAdd]  = React.useState([])
     // const correoRegistrado = localStorage.getItem("user")
     const detailMovie = JSON.parse(localStorage.getItem("detalle"))
