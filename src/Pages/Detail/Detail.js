@@ -37,11 +37,11 @@ const Detail = () => {
     //     console.log(peliculaAdd)
     // }
     React.useEffect(() => {
-        axios.get(getVideo(apiKey, detailMovie.id))
-            .then(response => {
-                setKeyVideo(response.data.results[0].key)
-            })
-        console.log(keyVideo)
+        // axios.get(getVideo(apiKey, detailMovie.id))
+        //     .then(response => {
+        //         setKeyVideo(response.data.results[0].key)
+        //     })
+        // console.log(keyVideo)
         // axios.get(urlFavorites)
         // .then(response => {
         //     // console.log(response.data)
