@@ -5,10 +5,13 @@ export const searcUrl =(apiKey, searh)=>{
     return `https://api.themoviedb.org/3/search/movie?&api_key=${apiKey}&include_video=true&query=${searh}`
 }
 export const getMovie =(apiKey, id)=>{
-    return `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
+    return `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}$include_video=true`
 }
 export const pathImg = "https://image.tmdb.org/t/p/original/"
 
 export const getAllMovies= (apiKey) =>{
     return `https://api.themoviedb.org/3/discover/movie/?api_key=${apiKey}&include_video=true&page=1`
+}
+export const getVideo= (apiKey, id) =>{
+    return `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`
 }

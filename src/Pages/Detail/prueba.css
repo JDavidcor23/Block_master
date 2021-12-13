@@ -1,0 +1,39 @@
+.Container {
+  background: #0f0e17;
+}
+.container-detalle {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 3rem;
+  color: white;
+}
+.poster-container {
+  width: 50%;
+}
+.backdrop-container img {
+  width: 100%;
+  height: 50%;
+}
+.video-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.video-container iframe {
+  width: 80%;
+  height: 500px;
+}
+.video-container p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  width: 80%;
+}
+button {
+  width: 80%;
+  text-align: center;
+}
+.btn {
+  margin: 20px 0;
+}

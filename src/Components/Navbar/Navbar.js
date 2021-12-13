@@ -24,17 +24,21 @@ const Navbar = () => {
     }
     const handleSubmit = (e) =>{
         e.preventDeafault();
+        var form = e.target;
         fetch(searcUrl(apiKey, input))
         .then(resp => resp.json())
         .then(data => setInput(data.results))
         .catch(err => setError(err))
+        form.reset();
+
     }
     return (
         <Nav>
             <Ul>
                 <LinkReact to="/"><Logo src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1638917366/Block_master/axlnvl0bw4js7kmoduvp.png" alt="logo"/></LinkReact>
-                <Li><LinkReact to="/">Todas</LinkReact></Li>
+                <Li><LinkReact to="/Home">Todas</LinkReact></Li>
                 <Li><LinkReact to="/">Menos valoradas</LinkReact></Li>
+                <Li><LinkReact to="/Perfil"><img src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639360757/Block_master/vjvk83kiubpybhq0utkf.png" alt="perfil"/></LinkReact></Li>
             </Ul>
             <From className='Buscardor' onSubmit={handleSubmit}>
                 <InputSearch 

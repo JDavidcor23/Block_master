@@ -8,27 +8,22 @@ import {
     CardsPeliculas 
 } from './StyledCardsMovies';
 
-import {pathImg, getMovie, apiKey} from '../../helpers/urls'
-import DetalleMovies from '../DetalleMovies/DetalleMovies'
-const CardsMovies = ({movies}) => {
-    
-    const thisMovies = movies.filter(movie => movie.poster_path != null)
-    const [movieId, setMovieId] = React.useState([])
-    const [mostraDetalle, setMostraDetalle] = React.useState(false)
-    const handleId = async(id) =>{
-       const resp = await fetch(getMovie(apiKey, id))
-       const data = await resp.json()
-       setMovieId(await data)
-       setMostraDetalle(!mostraDetalle)
-       console.log(mostraDetalle)
+import {pathImg} from '../../helpers/urls'
+import { Link } from 'react-router-dom';
+import Error from '../Error/Error';
+const CardsMovies = ({movies, error}) => {
+    let thisMovies =  movies.filter(movie => movie.poster_path != null && movie.backdrop_path != null)
+    const guardarLocalStorage = (id)=>{
+        const movieSelect = movies.find(movie => movie.id === id)
+        localStorage.setItem("detalle", JSON.stringify(movieSelect))
     }
-
     return (
         <ContainerMovies className="container-movies">
-        {mostraDetalle === true && 
-        <DetalleMovies detalle={movieId}/>}
-        {(thisMovies.map(movie =>(
-             <CardsPeliculas key={movie.id} onClick={()=>handleId(movie.id)}>
+        {error === "404" ?
+        <Error/>
+        :(thisMovies.map(movie =>(
+            <Link to="/Detail" key={movie.id} onClick={()=> guardarLocalStorage(movie.id)}>
+                <CardsPeliculas>
                  <DivCalificacion>
                      <Estrella src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639112517/Block_master/l97qdl2xvsughle4sefk.png"/>
                  <CalificationContainer src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639112517/Block_master/ttasy7wkie36p9xwsp7i.png"/>
@@ -36,11 +31,9 @@ const CardsMovies = ({movies}) => {
                  </DivCalificacion>
                  <Poster src={pathImg+ movie.poster_path} alt={movie.title}/>
              </CardsPeliculas>
+            </Link>
         )))}
-        {mostraDetalle === true && 
-        <DetalleMovies detalle={movieId} cerrar={mostraDetalle} setCerrar={setMostraDetalle}/>}  
         </ContainerMovies>
-
     );
 };
 

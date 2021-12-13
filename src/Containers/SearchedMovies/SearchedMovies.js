@@ -7,18 +7,31 @@ import {BodyMovies} from './styledSearchedMovies'
 const SearchedMovies = () => {
 
     const params = useParams();
-    //  const movie = "el señor de los anillos";
-     const {movie} = params;
+    const {movie} = params;
     const [movies, setMovies] = React.useState([])
+    const [error, setError] = React.useState(false)
+
+    const getSearch = async() =>{
+        const resp = await fetch(searcUrl(apiKey, movie))
+        const data = await resp.json()
+        return data
+    }
     React.useEffect(() => {
-         fetch(searcUrl(apiKey, movie))
-         .then(resp => resp.json())
-         .then(data => setMovies(data.results))
-    }, [movie])
+        getSearch()
+        .then(data => {
+            if(data.results.length  < 1){
+                setError("404")
+                setMovies([])
+            }else{
+                setError("")
+                setMovies(data.results)
+            }
+        })
+         
+    }, [params])
     return (
         <BodyMovies>
-            <CardsMovies movies={movies} /> 
- 
+            <CardsMovies movies={movies} error={error} setError={setError}/> 
         </BodyMovies>
     );
 };

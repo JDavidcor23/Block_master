@@ -1,41 +1,38 @@
-import React from 'react';
-
-const Carousel = () => {
-    const img = "https://image.tmdb.org/t/p/original/"
-    const [backgroutPath, setBackgroutPath] = React.useState([])
-
-    
-    const urlData = `https://api.themoviedb.org/3/discover/movie/?api_key=35cd12a9c692b8ebb4c0125b6c31d832&include_video=true&page=1`
-    const getData= async()=>{
-         let arryPoster = []
-         const resp = await fetch(urlData)
-         const data = await resp.json()
-         const results = await data.results
-        for(let i=0; i< 4; i++){
-            arryPoster.push(results[i])
-        }
-         return arryPoster
-    }
-    React.useEffect(() => {
-        getData()
-        .then(value => setBackgroutPath(value))
-
-    }, [])
-    return (
-        <div className='slides'>
-        <input type="radio" name='radio-btn' id='radio1'/>
-        <input type="radio" name='radio-btn' id='radio2'/>
-        <input type="radio" name='radio-btn' id='radio3'/>
-        <input type="radio" name='radio-btn' id='radio4'/>
-         {
-            (backgroutPath.map(backgrout =>(
-            <div className='slide-firts'>
-                <img src={img + backgrout.backdrop_path} alt=''/>
+ import React from 'react';
+ import { pathImg  } from '../../helpers/urls';
+ const Carousel = () => {
+     return (
+<div style={{background:"#0F0E17"}}id="carousel1" className="carousel slide carousel-fade" data-ride="carousel">
+            <div className="carousel-inner">
+            <div className="carousel-item active">
+            <img style={{width:"100%", height: "50vh", objectFit:"contain"}}src={pathImg + "/70nxSw3mFBsGmtkvcs91PbjerwD.jpg"} alt='Venom: Let There Be Carnage'/>
             </div>
-            )))
-        } 
-    </div>
-    );
-};
+            <div className="carousel-item">
+            <img style={{width:"100%", height: "50vh", objectFit:"contain"}} src={pathImg + "/5uVhMGsps81CN0S4U9NF0Z4tytG.jpg"} alt='Red Notice'/>
+            </div>
+            <div className="carousel-item">
+            <img style={{width:"100%", height: "50vh", objectFit:"contain"}}  src={pathImg + "/mFbS5TwN95BcSEfiztdchLgTQ0v.jpg"} alt="The Last Duel"/>
+            </div>
+            <div className="carousel-item">
+            <img style={{width:"100%", height: "50vh", objectFit:"contain"}} src={pathImg + "/g2djzUqA6mFplzC03gDk0WSyg99.jpg"} alt="Encanto"/>
+            </div>
+            </div>
+            <a className="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only"></span>
+            </a>
+            <a className="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only"></span>
+            </a>
+            <ol className="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" className="active"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+            </ol>
+            
+        </div>
+     );
+ };
 
-export default Carousel;
+ export default Carousel;

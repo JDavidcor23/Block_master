@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import SearchedMovies from '../../Containers/SearchedMovies/SearchedMovies';
 
-const SearchMovies = () => {
+
+export default class SearchMovies extends Component {
+  render() {
     return (
         <div>
             <SearchedMovies/>
         </div>
-    );
-};
-
-export default SearchMovies;
+    )
+  }
+}
