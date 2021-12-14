@@ -11,6 +11,7 @@ const Detail = () => {
     const detailMovie = JSON.parse(localStorage.getItem("detalle"))
     const yaEstaAgregada = moviesAdd.some(favorita => favorita.email === correoRegistrado && favorita.movieId === detailMovie.id)
     const peliculaAdd = moviesAdd.find(favorita => favorita.email === correoRegistrado && favorita.movieId === detailMovie.id)
+
     const postMovies = () =>{
          const emailUser=localStorage.getItem("user")
          let favoriteMovies ={
@@ -35,7 +36,6 @@ const Detail = () => {
                 })
                 alert("la pelicula fue eliminada de favoritos")
            }
-        console.log(urlFavorites)
      }
     React.useEffect(() => {
          axios.get(getVideo(apiKey, detailMovie.id))
@@ -43,7 +43,6 @@ const Detail = () => {
 
                  setKeyVideo(response.data.results[0].key)
              })
-         console.log(keyVideo)
          axios.get(urlFavorites)
          .then(response => {
              setMoviesAdd(response.data)

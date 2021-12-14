@@ -23,6 +23,7 @@ text-decoration: none;
 color: white;
 transition: 0.3s ease;
 `
+
 export const Li = styled.li`
 list-style: none;
 &:hover ${LinkReact} {
