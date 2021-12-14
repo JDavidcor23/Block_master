@@ -47,6 +47,7 @@ const Detail = () => {
          .then(response => {
              setMoviesAdd(response.data)
          })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [moviesAdd])
     return (
         <DontainerDetail>
