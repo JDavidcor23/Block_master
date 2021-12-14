@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import {searcUrl, apiKey} from '../../helpers/urls'
 import { useParams } from 'react-router-dom';
