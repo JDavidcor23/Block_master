@@ -36,6 +36,7 @@ const Perfil = () => {
         axios.get(urlUser)
          .then(resp => setUsuarioRegitrado(resp.data))
          console.log(usuarioRegitrado)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [])
     return (
          <Container>
