@@ -30,18 +30,20 @@ const Perfil = () => {
                 'Content-Type': 'application/json; charset=utf-8'
             }
         })
+        localStorage.setItem("user", user.email)
     }
     React.useEffect(() => {
         axios.get(urlUser)
          .then(resp => setUsuarioRegitrado(resp.data))
+         console.log(usuarioRegitrado)
         }, [])
     return (
          <div>
              <form onSubmit={handleSubmit}>
                  <h2>Modifica tus datos</h2>
                  <img src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639360757/Block_master/vjvk83kiubpybhq0utkf.png" alt="perfil"/>
-                 <input type="text" name="name" value={nombre} onChange={handleChange} placeholder='nombre' required/>
-                 <input type="email" name="email" value={email} onChange={handleChange} placeholder='Email' required/>
+                 <input type="text" name="name" value={nombre} onChange={handleChange} placeholder="nombre" required/>
+                 <input type="email" name="email" value={email} onChange={handleChange} placeholder="email" required/>
                  <input type="password" name="password" value={password} onChange={handleChange} placeholder='Contraseña' required/>
                  <button onClick={handleHome}>Cambiar</button>
              </form>
