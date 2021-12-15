@@ -10,4 +10,7 @@ export const DetailDiv = styled.div`
   margin: 0 auto;
   padding-top: 3rem;
   color: white;
+
 `
+ export const ImgBack = styled.img`
+ `

@@ -5,7 +5,9 @@ import {
     CalificationContainer, 
     Estrella,Calificacion, 
     DivCalificacion,
-    CardsPeliculas 
+    CardsPeliculas,
+    Loader, 
+    ContainerLoader 
 } from './StyledCardsMovies';
 
 import {pathImg} from '../../helpers/urls'
@@ -19,20 +21,28 @@ const CardsMovies = ({movies, error}) => {
     }
     return (
         <ContainerMovies className="container-movies">
-        {error === "404" ?
-        <Error/>
-        :(thisMovies.map(movie =>(
-            <Link to="/Detail" key={movie.id} onClick={()=> guardarLocalStorage(movie.id)}>
-                <CardsPeliculas>
-                 <DivCalificacion>
-                     <Estrella src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639112517/Block_master/l97qdl2xvsughle4sefk.png"/>
-                 <CalificationContainer src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639112517/Block_master/ttasy7wkie36p9xwsp7i.png"/>
-                 <Calificacion>{movie.vote_average}</Calificacion>
-                 </DivCalificacion>
-                 <Poster src={pathImg+ movie.poster_path} alt={movie.title}/>
-             </CardsPeliculas>
-            </Link>
-        )))}
+            <ContainerLoader className="ContainerLoader">
+                <Loader></Loader>
+            </ContainerLoader> 
+            {error === "404" ?
+            <div>
+                <ContainerLoader class="ContainerLoader">
+                    <Loader></Loader>
+                </ContainerLoader> 
+                <Error/>
+            </div>
+            :(thisMovies.map(movie =>(
+                    <Link to="/Detail" key={movie.id} onClick={()=> guardarLocalStorage(movie.id)}>
+                        <CardsPeliculas>
+                        <DivCalificacion>
+                            <Estrella src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639112517/Block_master/l97qdl2xvsughle4sefk.png"/>
+                        <CalificationContainer src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639112517/Block_master/ttasy7wkie36p9xwsp7i.png"/>
+                        <Calificacion>{movie.vote_average}</Calificacion>
+                        </DivCalificacion>
+                        <Poster src={pathImg+ movie.poster_path} alt={movie.title}/>
+                    </CardsPeliculas>
+                    </Link>
+                )))}
         </ContainerMovies>
     );
 };

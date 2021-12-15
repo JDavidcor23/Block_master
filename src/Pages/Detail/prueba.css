@@ -1,17 +1,6 @@
-.Container {
-  background: #0f0e17;
-}
-.container-detalle {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding-top: 3rem;
-  color: white;
-}
-.poster-container {
+/* .poster-container {
   width: 50%;
-}
+} */
 .backdrop-container img {
   width: 100%;
   height: 50%;
