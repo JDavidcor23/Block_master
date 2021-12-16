@@ -28,11 +28,10 @@ const SearchedMovies = () => {
                 setMovies(data.results)
             }
         })
-         
     }, [params])
     return (
         <BodyMovies>
-            <CardsMovies movies={movies} error={error} setError={setError}/> 
+            <CardsMovies movies={movies} error={error} setError={setError}/>  
         </BodyMovies>
     );
 };

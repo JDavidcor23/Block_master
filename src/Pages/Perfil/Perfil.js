@@ -4,15 +4,15 @@ import { urlUser } from '../../helpers/endponit';
 import {Container, Form,  ImgPerfil,  InputSP} from './StyledPerfil'
 const Perfil = () => {
     const [usuarioRegitrado, setUsuarioRegitrado] = React.useState([])
+    const [EncuentraUser, setEncuentraUser] = React.useState('')
     const localEmail = localStorage.getItem("user")
-    const EncuentraUser = usuarioRegitrado.find(user => user.email === localEmail)
     const [user, setUser] = React.useState({
         email:"",
         password:"",
         nombre:"",
     })
     const {email, password, nombre} = user
-
+    
     const handleChange = ({ target }) => {
         setUser({
             ...user,
@@ -34,16 +34,19 @@ const Perfil = () => {
     }
     React.useEffect(() => {
         axios.get(urlUser)
-         .then(resp => setUsuarioRegitrado(resp.data))
-         console.log(usuarioRegitrado)
+        .then(resp => setUsuarioRegitrado(resp.data))
+        const EncuentraUser = usuarioRegitrado.find(user => user.email === localEmail)
+        setEncuentraUser(EncuentraUser)
+        
         // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [])
+    
     return (
          <Container>
              <Form onSubmit={handleSubmit}>
                  <h2>Modifica tus datos</h2>
                  <ImgPerfil src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639515355/Block_master/wnvnbonidfppo7nx3fyt.png" alt="perfil"/>
-                 <InputSP type="text" name="name" value={nombre} onChange={handleChange} placeholder="nombre" required/>
+                 <InputSP type="text" name="nombre" value={nombre} onChange={handleChange} placeholder="nombre" required/>
                  <InputSP type="email" name="email" value={email} onChange={handleChange} placeholder="email" required/>
                  <InputSP type="password" name="password" value={password} onChange={handleChange} placeholder='Contraseña' required/>
                  <button onClick={handleHome} className='btn btn-warning'>Cambiar</button>

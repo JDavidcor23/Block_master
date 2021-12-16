@@ -7,23 +7,15 @@ import { urlFavorites } from '../../helpers/endponit'
 const Detail = () => {
     const [keyVideo, setKeyVideo] = React.useState('')
     const [moviesAdd, setMoviesAdd]  = React.useState([])
-    const correoRegistrado = localStorage.getItem("user")
     const detailMovie = JSON.parse(localStorage.getItem("detalle"))
-    const yaEstaAgregada = moviesAdd.some(favorita => favorita.email === correoRegistrado && favorita.movieId === detailMovie.id)
-    const peliculaAdd = moviesAdd.find(favorita => favorita.email === correoRegistrado && favorita.movieId === detailMovie.id)
+    const yaEstaAgregada = moviesAdd.some(favorita =>favorita.id === detailMovie.id)
+    const peliculaAdd = moviesAdd.find(favorita => favorita.id === detailMovie.id)
 
-    const postMovies = () =>{
-         const emailUser=localStorage.getItem("user")
-         let favoriteMovies ={
-             email:emailUser,
-             movieId: detailMovie.id,
-             title: detailMovie.title,
-             poster_path: detailMovie.poster_path,
-         } 
+    const postMovies = () =>{   
          if(yaEstaAgregada === true){
              alert("la pelicula ya esta añadida a favoritos")
          }else{
-             axios.post(urlFavorites, favoriteMovies)
+             axios.post(urlFavorites, detailMovie)
              alert("pelicula añadida a favoritos")
          }
      }
@@ -48,7 +40,7 @@ const Detail = () => {
              setMoviesAdd(response.data)
          })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [moviesAdd])
+    }, [])
     return (
         <DontainerDetail>
             <DetailDiv>

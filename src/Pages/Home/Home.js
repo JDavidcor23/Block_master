@@ -5,12 +5,12 @@ import { getAllMovies, apiKey } from '../../helpers/urls';
 import {ConatinerHome} from './StyledHome'
 
 const Home = () => {
-    const [movies, setMovies] = React.useState([]) 
-    React.useEffect(() => {
-        fetch(getAllMovies(apiKey))
-        .then(resp => resp.json())
-        .then(data => setMovies(data.results))
-    }, [])
+     const [movies, setMovies] = React.useState([]) 
+     React.useEffect(() => {
+         fetch(getAllMovies(apiKey))
+         .then(resp => resp.json())
+         .then(data => setMovies(data.results))
+     }, [])
     return (
         <ConatinerHome>
             <Carousel/>
