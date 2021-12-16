@@ -1,15 +1,15 @@
 import React from 'react';
 import Carousel from '../../Components/Carousel/Carousel';
 import AllMovies from '../../Containers/AllMovies/AllMovies';
-import { getAllMovies, apiKey } from '../../helpers/urls';
+import {  apiKey } from '../../helpers/urls';
 import {ConatinerHome} from './StyledHome'
 
 const Home = () => {
      const [movies, setMovies] = React.useState([]) 
      React.useEffect(() => {
-         fetch(getAllMovies(apiKey))
-         .then(resp => resp.json())
-         .then(data => setMovies(data.results))
+        fetch(`https://api.themoviedb.org/3/discover/movie/?api_key=${apiKey}&include_video=true&page=1`)
+        .then(resp => resp.json())
+        .then(data => setMovies(data.results))
      }, [])
     return (
         <ConatinerHome>
