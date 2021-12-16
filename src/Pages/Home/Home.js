@@ -7,7 +7,7 @@ import {ConatinerHome} from './StyledHome'
 const Home = () => {
      const [movies, setMovies] = React.useState([]) 
      React.useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/discover/movie/?api_key=${apiKey}&include_video=true&page=1`)
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_video=true&page=1`)
         .then(resp => resp.json())
         .then(data => setMovies(data.results))
      }, [])
@@ -18,5 +18,7 @@ const Home = () => {
         </ConatinerHome>
     );
 };
+// "https://api.themoviedb.org/3/search/movie?api_key=####&query=" +
 
+// "https://api.themoviedb.org/3/search/movie/?api_key=####&query=" +
 export default Home;
