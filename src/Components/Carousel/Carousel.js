@@ -3,33 +3,25 @@
  const Carousel = () => {
      return (
 <div style={{background:"#0F0E17"}}id="carousel1" className="carousel slide carousel-fade" data-ride="carousel">
-            <div className="carousel-inner">
+             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img style={{width:"100%", height: "50vh", objectFit:"contain"}}src={pathImg + "/70nxSw3mFBsGmtkvcs91PbjerwD.jpg"} alt='Venom: Let There Be Carnage'/>
-                    {/* <button>VER AHORA</button>
-                    <button>AGREGAR A FAVORITAS</button> */}
+                    <img style={{width:"100%", height: "50vh", objectFit:"contain"}}src={pathImg + "/1Rr5SrvHxMXHu5RjKpaMba8VTzi.jpg"} alt="Spider-Man: No Way Home"/>
                 </div>
                 <div className="carousel-item">
-                    <img style={{width:"100%", height: "50vh", objectFit:"contain"}} src={pathImg + "/5uVhMGsps81CN0S4U9NF0Z4tytG.jpg"} alt='Red Notice'/>
-                    {/* <button>VER AHORA</button>
-                    <button>AGREGAR A FAVORITAS</button> */}
+                    <img style={{width:"100%", height: "50vh", objectFit:"contain"}} src={pathImg + "/o76ZDm8PS9791XiuieNB93UZcRV.jpg"} alt="Resident Evil: Welcome to Raccoon City"/>
                 </div>
                 <div className="carousel-item">
-                    <img style={{width:"100%", height: "50vh", objectFit:"contain"}}  src={pathImg + "/mFbS5TwN95BcSEfiztdchLgTQ0v.jpg"} alt="The Last Duel"/>
-                    {/* <button>VER AHORA</button>
-                    <button>AGREGAR A FAVORITAS</button> */}
+                    <img style={{width:"100%", height: "50vh", objectFit:"contain"}}  src={pathImg + "/hv7o3VgfsairBoQFAawgaQ4cR1m.jpg"} alt="The Matrix Resurrections"/>
                 </div>
                 <div className="carousel-item">
-                    <img style={{width:"100%", height: "50vh", objectFit:"contain"}} src={pathImg + "/g2djzUqA6mFplzC03gDk0WSyg99.jpg"} alt="Encanto"/>
-                    {/* <button>VER AHORA</button>
-                    <button>AGREGAR A FAVORITAS</button> */}
+                    <img style={{width:"100%", height: "50vh", objectFit:"contain"}} src={pathImg + "/3G1Q5xF40HkUBJXxt2DQgQzKTp5.jpg"} alt="Encanto"/>
                 </div>
-            </div>
+            </div>  
             <a className="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="sr-only"></span>
             </a>
-            <a className="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+            <a className="carousel-control-next" href="#carousel1" role="button" data-slide="next" style={{background: "none"}}>
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="sr-only"></span>
             </a>

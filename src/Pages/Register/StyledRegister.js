@@ -12,7 +12,6 @@ align-items: center;
 `
 export const FormRegister = styled.form`
 width: 300px;
-height: 70%;
 color: white;
 max-width: 350px;
 margin: 0 auto;
@@ -26,6 +25,7 @@ export const RegisterIput = styled.input`
 margin: 10px 0;
 height: 30px;
 padding: 5px;
+background: white;
 font-size:1.2rem;
 font-family: 'Montserrat', sans-serif;
 font-weight:bold;

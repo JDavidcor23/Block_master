@@ -43,7 +43,8 @@ const Login = () => {
                  <LoginIput type="email" name="email" value={email} onChange={handleChange} placeholder='Email' required/>
                  <LoginIput type="password" name="password" value={password} onChange={handleChange} placeholder='Contraseña' required/>
                  {hayCorreo === true && thisPassword === true ?
-                 <ButtonLogin onClick={handleHome}><LinkButton to="/Home">Iniciar Secion</LinkButton></ButtonLogin>
+                 <LinkButton to="/Home">
+                 <ButtonLogin onClick={handleHome}>Iniciar Secion</ButtonLogin></LinkButton>
                  : <ButtonLogin onClick={handleHome}>Iniciar Secion</ButtonLogin>}
                  <p>¿No tienes cuenta? <LinkRegistro to="/register">Click aqui</LinkRegistro></p>
              </FormLogin>

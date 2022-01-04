@@ -27,8 +27,8 @@ const Navbar = () => {
                 <LinkReact to="/Home"><Logo src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1638917366/Block_master/axlnvl0bw4js7kmoduvp.png" alt="logo"/></LinkReact>
                 <Li><LinkReact to="/Home">Todas</LinkReact></Li>
                 <Li><LinkReact to="/TopRated">Mejor valoradas</LinkReact></Li>
-                <Li><Link to="/Favorites"><img width="30px" src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639660295/Block_master/efimv7u3m0e8shtmocxh.png" alt="perfil"/></Link></Li>
-                <Li><Link to="/Perfil"><img width="50%" src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639360757/Block_master/vjvk83kiubpybhq0utkf.png" alt="perfil"/></Link></Li>
+                <Li><Link to="/Favorites"><img width="30px" src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1639660295/Block_master/efimv7u3m0e8shtmocxh.png" alt="perfil" style={{background: "black"}}/></Link></Li>
+
             </Ul>
             
             <From className='Buscardor' onSubmit={handleSubmit} action=''>
@@ -40,8 +40,8 @@ const Navbar = () => {
                 required
                 />
                 <Link  to={`/searchmovies/${input}`}>
-                <ButtonSearch type="submit">
-                    <ImgSearch src='https://res.cloudinary.com/dhu6ga6hl/image/upload/v1638919435/Block_master/kmuvt15nereuupyxtufr.png' alt="lupa"/>
+                <ButtonSearch type="submit" >
+                    <ImgSearch src='https://res.cloudinary.com/dhu6ga6hl/image/upload/v1638919435/Block_master/kmuvt15nereuupyxtufr.png' alt="lupa" style={{background:"none"}}/>
                 </ButtonSearch>
                 </Link>
             </From>

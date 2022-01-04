@@ -2,10 +2,10 @@ import React from 'react';
 import CardsMovies from '../../Components/CardsMovies/CardsMovies';
 import {BodyMovies} from './StyledAllMovies'
 
-const AllMovies = ({movies}) => {
+const AllMovies = ({movies, route}) => {
     return (
         <BodyMovies>
-            <CardsMovies movies={movies} />  
+            <CardsMovies movies={movies} route={route}/>  
         </BodyMovies>
     );
 };

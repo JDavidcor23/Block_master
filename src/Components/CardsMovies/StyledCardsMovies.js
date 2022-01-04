@@ -8,8 +8,9 @@ export const ContainerMovies = styled.div`
 width: 90%;
 flex-wrap: wrap;
 display: flex;
-justify-content: space-between;
+justify-content: center;
 margin: 0 auto;
+padding: 30px 0 0 0;
 position:relative;
 `
 export const CardsPeliculas = styled.div`
@@ -20,6 +21,12 @@ margin-bottom: 20px;
 
 export const Poster = styled.img`
 width: 200px;
+@media screen and (max-width: 500px) {
+        width: 150px;
+} 
+@media screen and (max-width: 400px) {
+        width: 120px;
+} 
 `
 
 export const DivCalificacion= styled.div`

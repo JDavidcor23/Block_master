@@ -11,18 +11,18 @@ import {
 } from './StyledCardsMovies';
 import Loader from '../Loader/Loader';
 import {pathImg} from '../../helpers/urls'
-// import { Link } from 'react-router-dom';
 import Error from '../Error/Error';
-const CardsMovies = ({movies, error}) => {
+const CardsMovies = ({movies, error, route}) => {
     let thisMovies =  movies.filter(movie => movie.poster_path != null && movie.backdrop_path != null)
     
     const guardarLocalStorage = (id)=>{
         const movieSelect = movies.find(movie => movie.id === id)
         localStorage.setItem("detalle", JSON.stringify(movieSelect))
+        localStorage.setItem("Route", route)
     }
     return (
         <ContainerMovies className="container-movies">
-            <Loader/>
+            <Loader/> 
             {error === "404" ?
             <div>
                 <Error/>

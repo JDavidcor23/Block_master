@@ -6,19 +6,29 @@ import {ConatinerHome} from './StyledHome'
 
 const Home = () => {
      const [movies, setMovies] = React.useState([]) 
+     const [page, setPage] = React.useState(1)
+     const route = "/Home"
+     const mostarMas = () =>{
+         setPage(prevPage => prevPage + 1)
+     }
      React.useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_video=true&page=1`)
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_video=true&page=${page}`)
         .then(resp => resp.json())
-        .then(data => setMovies(data.results))
-     }, [])
+        .then(data => setMovies(prevMovies => prevMovies.concat(data.results)))
+     }, [page])
     return (
-        <ConatinerHome>
-            <Carousel/>
-            <AllMovies movies={movies}/>
-        </ConatinerHome>
+            <div style={{background: "#0f0e17",
+                height:"100vh", position:"relative"}}>
+            <ConatinerHome>
+                <Carousel/>
+                <h2 style={{color:"white", textAlign:"center"}}>Todas las peliculas</h2>
+                <AllMovies movies={movies} route={route}/>
+                <div style={{display:"flex", justifyContent:"center"}}>
+                    <button className='btn btn-warning' onClick={mostarMas}>Mostrar más</button>
+                </div>
+            </ConatinerHome>
+            </div>
+
     );
 };
-// "https://api.themoviedb.org/3/search/movie?api_key=####&query=" +
-
-// "https://api.themoviedb.org/3/search/movie/?api_key=####&query=" +
 export default Home;

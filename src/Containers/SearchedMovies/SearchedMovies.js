@@ -11,7 +11,7 @@ const SearchedMovies = () => {
     const {movie} = params;
     const [movies, setMovies] = React.useState([])
     const [error, setError] = React.useState(false)
-
+    const route = `/searchmovies/${movie}`
     const getSearch = async() =>{
         const resp = await fetch(searcUrl(apiKey, movie))
         const data = await resp.json()
@@ -31,7 +31,7 @@ const SearchedMovies = () => {
     }, [params])
     return (
         <BodyMovies>
-            <CardsMovies movies={movies} error={error} setError={setError}/>  
+            <CardsMovies movies={movies} error={error} setError={setError} route={route}/>  
         </BodyMovies>
     );
 };
