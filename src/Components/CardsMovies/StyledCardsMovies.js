@@ -46,10 +46,12 @@ position: absolute;
 width: 30px;
 top:20%;
 z-index:1;
+background:none;
 `
 export const Calificacion = styled.p`
 position: absolute;
 font-size: 1.2rem;
+background:none;
 top: 20%;
 color: white;
 left: 40%;
