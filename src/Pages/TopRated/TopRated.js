@@ -1,6 +1,8 @@
 import React from 'react';
 import CardsMovies from '../../Components/CardsMovies/CardsMovies';
 import {apiKey} from '../../helpers/urls'
+import Loader from '../../Components/Loader/Loader';
+
 const TopRated = () => {
     const [movies, setMovies] = React.useState([])
     const [page, setPage] = React.useState(1)
@@ -15,6 +17,7 @@ const TopRated = () => {
     }, [page])
     return (
         <div style={{background: "#0f0e17", height:"100vh"}}>
+            <Loader/> 
             <div style={{background:"#0F0E17"}}>
                 <CardsMovies movies={movies} route={route}/> 
                 <div style={{display: "flex",justifyContent: "center"}}>

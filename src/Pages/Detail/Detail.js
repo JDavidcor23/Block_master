@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './prueba.css'
 import { pathImg, apiKey, getVideo } from '../../helpers/urls'
 import { urlFavorites } from '../../helpers/endponit'
+
 const Detail = () => {
     const navigate = useNavigate()
     const [keyVideo, setKeyVideo] = React.useState('')
@@ -58,9 +59,9 @@ const Detail = () => {
                         title='video'
                         />
                     <p>{detailMovie.overview}</p>
-                    <button className='btn btn-warning mt-10' onClick={postMovies}>Agregar a favoritos</button>
-                    <button className="btn btn-primary btm-sm mx-2"onClick={() => navigate(route)}>Atras</button>
-                    <button className='btn btn-danger t-10' onClick={deleteMovies}>Eliminar de favoritos</button> 
+                    <button className='btn btn-warning mt-10 buttonD' onClick={postMovies}>Agregar a favoritos</button>
+                    <button className="btn btn-primary btm-sm mx-2 buttonD"onClick={() => navigate(route)}>Atras</button>
+                    <button className='btn btn-danger t-10 buttonD' onClick={deleteMovies}>Eliminar de favoritos</button> 
                 </div>
             </DetailDiv>
         </DontainerDetail>

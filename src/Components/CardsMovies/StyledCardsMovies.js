@@ -34,6 +34,7 @@ position: absolute;
 display: flex;
 width: 100px;
 height: 50px;
+background:none;
 `
 export const CalificationContainer = styled.img`
 width: 100%;

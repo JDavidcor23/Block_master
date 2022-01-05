@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from '../../Components/Carousel/Carousel';
 import AllMovies from '../../Containers/AllMovies/AllMovies';
 import {  apiKey } from '../../helpers/urls';
+import Loader from '../../Components/Loader/Loader';
 import {ConatinerHome} from './StyledHome'
 
 const Home = () => {
@@ -19,14 +20,15 @@ const Home = () => {
     return (
             <div style={{background: "#0f0e17",
                 height:"100vh", position:"relative"}}>
-            <ConatinerHome>
-                <Carousel/>
-                <h2 style={{color:"white", textAlign:"center"}}>Todas las peliculas</h2>
-                <AllMovies movies={movies} route={route}/>
-                <div style={{display:"flex", justifyContent:"center"}}>
-                    <button className='btn btn-warning' onClick={mostarMas}>Mostrar más</button>
-                </div>
-            </ConatinerHome>
+                <Loader/> 
+                <ConatinerHome>
+                    <Carousel/>
+                    <h2 style={{color:"white", textAlign:"center"}}>Todas las peliculas</h2>
+                    <AllMovies movies={movies} route={route}/>
+                    <div style={{display:"flex", justifyContent:"center"}}>
+                        <button className='btn btn-warning' onClick={mostarMas}>Mostrar más</button>
+                    </div>
+                </ConatinerHome>
             </div>
 
     );

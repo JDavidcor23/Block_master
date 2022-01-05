@@ -1,6 +1,7 @@
 import React from 'react';
 import { urlFavorites } from '../../helpers/endponit'
 import CardsMovies from '../../Components/CardsMovies/CardsMovies';
+import Loader from '../../Components/Loader/Loader';
 
 const Favorites = () => {
     const [movies, setMovies] = React.useState([])
@@ -12,6 +13,7 @@ const Favorites = () => {
     }, [])
     return (
         <div style={{background: "#0f0e17", height:"100vh"}}>
+            <Loader/> 
             {movies.length === 0 ?
             <h2 style={{color:"white", textAlign:"center", marginTop:"20px"}}>No tienes ninguna película agregada</h2>
             :<div style={{background:"#0F0E17"}}>

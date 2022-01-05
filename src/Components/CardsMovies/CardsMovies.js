@@ -9,7 +9,7 @@ import {
     LinkCards,
 
 } from './StyledCardsMovies';
-import Loader from '../Loader/Loader';
+
 import {pathImg} from '../../helpers/urls'
 import Error from '../Error/Error';
 const CardsMovies = ({movies, error, route}) => {
@@ -22,7 +22,6 @@ const CardsMovies = ({movies, error, route}) => {
     }
     return (
         <ContainerMovies className="container-movies">
-            <Loader/> 
             {error === "404" ?
             <div>
                 <Error/>
