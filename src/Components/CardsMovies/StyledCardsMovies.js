@@ -37,7 +37,7 @@ height: 50px;
 `
 export const CalificationContainer = styled.img`
 width: 100%;
-position:;
+background:none;
 display: flex;
 
 `
